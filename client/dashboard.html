@@ -1,0 +1,232 @@
+<template name="dashboard">
+<body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-toggle"></span>
+      </button>
+      <a class="navbar-brand" href="#">CollegePuppy</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <!--notifications-->
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span> Notifications</a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
+          <!-- end of notifications-->
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+            <i class="glyphicon glyphicon-user"></i> Me<span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Manage My Itemlist</a></li>
+            <li><a href="#">My Wishlist</a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container">
+  
+  <!-- upper section -->
+  <div class="row">
+	<div class="col-sm-3">
+      <!-- left -->
+      <h3><i class="glyphicon glyphicon-shopping-cart"></i> Category</h3>
+      <hr>
+      
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-star"></i> Free Giving</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-book"></i> Textbooks</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-bookmark"></i> Novels</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-phone"></i> Electronic Devices</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-leaf"></i> Sports & Clothing</a></li>
+        
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-tower"></i> Furniture</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-map-marker"></i> Housing</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-road"></i> Transportation</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-plus"></i> Others</a></li>
+      </ul>
+      
+      <hr>
+      
+  	</div><!-- /span-3 -->
+    <div class="col-sm-7">
+      	
+      <!-- column 2 -->	
+        
+       
+        <h3><i class="glyphicon glyphicon-th-list"></i> Dashboard</h3>
+        
+        
+        
+        <hr>
+      
+	   <div class="row">
+            <!-- center left-->	
+         	<div class="col-md-12">
+			  <ul class="list-inline">
+                <li>
+                    <a href="#" class="btn btn-default btn-sm"><span                           class="network-name">I want to sell</span></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default btn-sm"><span                               class="network-name">I want to get</span></a>
+                </li>
+
+                </ul>
+              
+              <hr>
+            <!--the item list below-->
+                <div class="row">
+                    {{>itemlist}}
+                    {{>itemlist}}
+                    {{>itemlist}}
+                </div>
+                <div class="row">
+                    {{>itemlist}}
+                    {{>itemlist}}
+                    {{>itemlist}}
+                </div>
+                <div class="row">
+                    {{>itemlist}}
+                    {{>itemlist}}
+                    {{>itemlist}}
+                </div>
+                                 
+            <!--End of the item list-->
+          	</div><!--/col-->
+         
+            
+     
+       </div><!--/row-->
+  	</div><!--/col-span-9-->
+    <div class="col-sm-2">
+        <!--center-right-->
+        	
+                <h3><i class="glyphicon glyphicon-time"></i> Recently</h3> 
+        <hr>
+        <div class="ds">
+                {{>newsfeed}}
+        </div>     
+			
+    </div>
+    
+  </div><!--/row-->
+  <!-- /upper section -->
+  
+  
+  
+</div><!--/container-->
+<!-- /Main -->
+
+
+<footer class="text-center">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>
+
+
+<div class="modal" id="addWidgetModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Add Widget</h4>
+      </div>
+      <div class="modal-body">
+        <p>Add a widget stuff here..</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dalog -->
+</div><!-- /.modal -->
+
+
+
+  
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+</body>
+</template>
+
+<template name="itemlist">
+    <div class="col-md-4 col-sm-4 mb">
+    <div class="white-panel pn">
+        <div class="white-header">
+            <h5>Wallet</h5>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-6 goleft">
+                <p><i class="glyphicon glyphicon-heart"></i> 122</p>
+            </div>
+            <div class="col-sm-6 col-xs-6"></div>
+        </div>
+        <div class="centered">
+            <img src="product.png" width="120">
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p>$50</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</template>
+
+<template name="newsfeed">
+    
+                                        
+                      <!-- First Action -->
+                      <div class="desc">
+                      	
+                      	<div class="details">
+                      		<p><muted>2 Minutes Ago</muted><br/>
+                      		   Someone is looking for a <a href="#">summer housing</a>.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Second Action -->
+                      <div class="desc">
+                      	
+                      	<div class="details">
+                      		<p><muted>3 Hours Ago</muted><br/>
+                      		   Someone is looking for a <a href="#">transportation to downtown</a>.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Third Action -->
+                      <div class="desc">
+                      	
+                      	<div class="details">
+                      		<p><muted>7 Hours Ago</muted><br/>
+                      		   Someone is selling a <a href="#">charger</a>.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Fourth Action -->
+                      <div class="desc">
+                      	
+                      	<div class="details">
+                      		<p><muted>11 Hours Ago</muted><br/>
+                      		   Someone viewed a <a href="#">headphone</a>.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Fifth Action -->
+                      <div class="desc">
+                      	
+                      	<div class="details">
+                      		<p><muted>18 Hours Ago</muted><br/>
+                      		   Someone loves a <a href="#">Wallet</a>.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+
+</template>
